@@ -31,4 +31,22 @@ class Category extends Database
 
         return $data;
     }
+
+    public function deleteCategory(int $catID, int $userId): bool
+    {
+        $request = $this->db->prepare("
+        DELETE FROM category 
+        WHERE id = :id
+        AND user_id = :userID
+        ");
+
+        // Lier les paramètres
+        $request->bindParam(':id', $catID, PDO::PARAM_INT);
+        $request->bindParam(':userID', $userId, PDO::PARAM_INT);
+
+        // Exécuter la requête
+        $request->execute();
+
+        return true;
+    }
 }
