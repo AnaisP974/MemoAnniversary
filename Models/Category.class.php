@@ -32,6 +32,24 @@ class Category extends Database
         return $data;
     }
 
+    public function getByName($name, $userID)
+    {
+        $request = $this->db->prepare("
+        SELECT * FROM category 
+        WHERE user_id = :userID
+        AND name = :name;
+        ");
+
+        $request->execute([
+            "name" => $name,
+            "userID" => $userID
+        ]);
+
+        $data = $request->fetch(PDO::FETCH_ASSOC);
+
+        return $data;
+    }
+
     public function deleteCategory(int $catID, int $userId): bool
     {
         $request = $this->db->prepare("

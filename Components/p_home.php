@@ -19,7 +19,7 @@
                     </figure>
 
                     <section class="mx-5">
-                        <h4 class="text-2xl font-semibold text-gray-700">XX Categories</h4>
+                        <h4 class="text-2xl font-semibold text-gray-700"><?= count($categories) ?> Categor<?= count($categories)>1 ? "ies":"y" ?></h4>
                         <div class="text-gray-500">Create new category</div>
                     </section>
                 </article>
