@@ -1,8 +1,9 @@
-   
+   <footer>
 
-    <footer>
+   </footer>
 
-    </footer>
-    </body>
+   <!-- Script Personnel -->
+   <script src="./Assets/js/script.js"></script>
+   </body>
 
-    </html>
+   </html>

@@ -42,6 +42,7 @@ if (!empty($_POST['identity']) && !empty($_POST['password']))
         // Authentification réussie
         $_SESSION['msg'] = "Login successful !";
         $_SESSION['user'] = 'isConnected';
+        $_SESSION['userID'] = $user['id'];
         //Mise à jour de la date de dernière connexion
         $modelUser->newConnexion($user['id']); 
         // Si l'utilisateur a un role "user" rediriger vers son profile
