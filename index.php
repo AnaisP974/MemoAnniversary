@@ -6,6 +6,15 @@ include_once("./Components/head.php");
 $request = $_SERVER['REQUEST_URI'];
 $viewDir = '/Views/';
 
+// Récupérer la valeur du paramètre 'pg' dans l'url
+// S'il n'y a pas de valeur 'pg', il sera égal à "home"
+$page = $_GET['pg'] ?? 'p_home';
+
+// Si la page n'éxiste pas retourner la page d'erreur 404.php
+if (!file_exists("./Components/" . $page . ".php")) {
+    $page = '404';
+};
+
 switch ($request) {
     case '':
     case '/':
@@ -36,16 +45,28 @@ switch ($request) {
         require __DIR__ . $viewDir . 'profile.php';
         break;
 
+    case '/profile?pg=p_home':
+        require __DIR__ . $viewDir . 'profile.php';
+        break;
+
+    case '/profile?pg=p_birthdays':
+        require __DIR__ . $viewDir . 'profile.php';
+        break;
+
+    case '/profile?pg=p_categories':
+        require __DIR__ . $viewDir . 'profile.php';
+        break;
+
+    case '/profile?pg=p_category-new':
+        require __DIR__ . $viewDir . 'profile.php';
+        break;
+
+    case '/profile?pg=p_settings':
+        require __DIR__ . $viewDir . 'profile.php';
+        break;
+
     case '/dashboard':
         require __DIR__ . $viewDir . 'dashboard.php';
-        break;
-
-    case '/categories':
-        require __DIR__ . $viewDir . 'categories.php';
-        break;
-
-    case '/birthdays':
-        require __DIR__ . $viewDir . 'birthdays.php';
         break;
 
     default:

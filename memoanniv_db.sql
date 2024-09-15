@@ -36,12 +36,27 @@ CREATE TABLE birthday (
   birthday_date DATETIME,
   message TEXT,
   phone VARCHAR(20),
-  email VARCHAR(255) UNIQUE NOT NULL,
+  email VARCHAR(255),
   likes TEXT,
+  sms VARCHAR(255),
+  isSMS BOOLEAN DEFAULT false,
+  isEmail BOOLEAN DEFAULT false,
   user_id INT NOT NULL,
-  category_id INT NOT NULL,
+  category_id INT,
   FOREIGN KEY (user_id) REFERENCES user(id) ON DELETE CASCADE,
-  FOREIGN KEY (category_id) REFERENCES category(id) ON DELETE CASCADE
+  FOREIGN KEY (category_id) REFERENCES category(id)
+) ENGINE=InnoDB;
+
+CREATE TABLE history (
+  id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  content TEXT,
+  date DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
+  type VARCHAR(100) NOT NULL,
+  destination VARCHAR(255) NOT NULL,
+  recipient VARCHAR(255) NOT NULL,
+  user_id INT NOT NULL,
+  FOREIGN KEY (user_id) REFERENCES user(id) ON DELETE CASCADE
 ) ENGINE=InnoDB;
 
 -- INJECTION DE DONNEES DE TEST ---
