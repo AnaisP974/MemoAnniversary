@@ -2,6 +2,23 @@
 
 class User extends Database
 {
+    public function createUser($name, $email, $password): bool
+    {
+        $request = $this->db->prepare("
+        INSERT INTO user (name, email, password) 
+        VALUES (:name, :email, :password)
+        ");
+
+        // Exécute la requête avec les paramètres
+        $request->execute([
+            "name" => $name,
+            "email" => $email,
+            "password" => $password
+        ]);
+
+        return true;
+    }
+
     public function getAll()
     {
         $request = $this->db->prepare("SELECT * FROM user;");

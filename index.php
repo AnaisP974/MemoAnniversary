@@ -28,6 +28,10 @@ switch ($request) {
         require __DIR__ . $viewDir . 'register.php';
         break;
 
+    case '/reset-password':
+        require __DIR__ . $viewDir . 'reset-password.php';
+        break;
+
     case '/profile':
         require __DIR__ . $viewDir . 'profile.php';
         break;
