@@ -1,5 +1,5 @@
 <?php
-include_once("./Components/header.php");
+include_once("./Components/partials/header.php");
 ?>
 <main>
 

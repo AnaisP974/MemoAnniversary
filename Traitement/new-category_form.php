@@ -18,11 +18,11 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' & !empty($_POST['name']))
     if($data)
     {
         $_SESSION['err'] = "The category '" . $new . "' already exists";
-        header('Location: /profile?pg=p_category-new');
+        header('Location: /profile?pg=new_category');
         exit();
     }
 
     $newCat = $modelCategory->createCategory($new, $userID);
-    header('Location: /profile?pg=p_category-new');
+    header('Location: /profile?pg=new_category');
     exit();
 }

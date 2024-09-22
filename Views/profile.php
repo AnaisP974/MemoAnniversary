@@ -26,7 +26,7 @@ if ($_SESSION['role'] === "user" && $_SESSION["user"] === "isConnected") :
                     <span class="mx-3">Dashboard</span>
                 </a>
 
-                <a href="/profile?pg=p_birthdays" class="flex items-center px-6 py-2 mt-4 <?php echo (isset($_GET['pg']) && $_GET['pg'] === "p_bithdays") ?  "text-gray-100 bg-gray-700 bg-opacity-25" : "text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"; ?>">
+                <!-- <a href="/profile?pg=p_birthdays" class="flex items-center px-6 py-2 mt-4 <?php echo (isset($_GET['pg']) && $_GET['pg'] === "p_bithdays") ?  "text-gray-100 bg-gray-700 bg-opacity-25" : "text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"; ?>">
 
                     <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor">
@@ -50,7 +50,7 @@ if ($_SESSION['role'] === "user" && $_SESSION["user"] === "isConnected") :
                     </svg>
 
                     <span class="mx-3">Categories</span>
-                </a>
+                </a> -->
 
                 <a href="/profile?pg=p_settings" class="flex items-center px-6 py-2 mt-4 <?php echo (isset($_GET['pg']) && $_GET['pg'] === "p_settings") ?  "text-gray-100 bg-gray-700 bg-opacity-25" : "text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"; ?>">
                     <!-- Retrouver les icones https://iconsvg.xyz/ -->
@@ -186,11 +186,11 @@ if ($_SESSION['role'] === "user" && $_SESSION["user"] === "isConnected") :
             </header>
 
             <!-- COMPONENT DASHBOARD -->
-            <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-200">
+            <section class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-200">
                 <?php
                 require "./Components/" . $page . ".php";
                 ?>
-            </main>
+            </section>
         </div>
     </main>
 <?php

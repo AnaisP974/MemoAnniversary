@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include_once("./Components/head.php");
+include_once("./Components/partials/head.php");
 
 $request = $_SERVER['REQUEST_URI'];
 $viewDir = '/Views/';
@@ -53,11 +53,15 @@ switch ($request) {
         require __DIR__ . $viewDir . 'profile.php';
         break;
 
+    case '/profile?pg=new_birthday':
+        require __DIR__ . $viewDir . 'profile.php';
+        break;
+
     case '/profile?pg=p_categories':
         require __DIR__ . $viewDir . 'profile.php';
         break;
 
-    case '/profile?pg=p_category-new':
+    case '/profile?pg=new_category':
         require __DIR__ . $viewDir . 'profile.php';
         break;
 
@@ -74,4 +78,4 @@ switch ($request) {
         require __DIR__ . $viewDir . '404.php';
 }
 
-require_once("./Components/footer.php");
+require_once("./Components/partials/footer.php");

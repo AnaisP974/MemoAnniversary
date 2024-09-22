@@ -1,5 +1,5 @@
 <?php
-include_once("./Components/header.php");
+include_once("./Components/partials/header.php");
 ?>
 <main class="bg-gray-100">
     <div class="container mx-auto py-8">

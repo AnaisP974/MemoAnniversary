@@ -1,5 +1,5 @@
 <?php
-include_once("./Components/header.php");
+include_once("./Components/partials/header.php");
 ?>
 <main class="w-full">
     <div class="flex bg-white" style="height:600px;">

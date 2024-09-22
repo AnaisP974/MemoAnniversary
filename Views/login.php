@@ -1,5 +1,5 @@
 <?php
-include_once("./Components/header.php");
+include_once("./Components/partials/header.php");
 ?>
 <main class="bg-gray-100">
     <?php
@@ -7,7 +7,7 @@ include_once("./Components/header.php");
     ?>
         <div class="flex justify-center mt-4" id="alert-logout">
             <div
-                class="font-regular relative block w-full max-w-screen-md rounded-lg bg-green-500 px-4 py-4 text-base text-white"
+                class="font-regular relative block w-full max-w-screen-md rounded-lg bg-green-100 px-4 py-4 text-base text-green-800 border-green-500 border"
                 data-dismissible="alert">
                 <div class="absolute top-4 left-4">
                     <svg
@@ -23,17 +23,17 @@ include_once("./Components/header.php");
                     </svg>
                 </div>
                 <div class="ml-8 mr-12">
-                    <h5 class="block font-sans text-xl font-semibold leading-snug tracking-normal text-white antialiased">
+                    <h5 class="block font-sans text-xl font-semibold leading-snug tracking-normal text-green-800 antialiased">
                         Success
                     </h5>
-                    <p class="mt-2 block font-sans text-base font-normal leading-relaxed text-white antialiased">
+                    <p class="mt-2 block font-sans text-base font-normal leading-relaxed text-green-800 antialiased">
                         <?= $_SESSION['msg'] ?>
                     </p>
                 </div>
                 <div
                     data-dismissible-target="alert"
                     data-ripple-dark="true"
-                    class="absolute top-3 right-3 w-max rounded-lg transition-all hover:bg-white hover:bg-opacity-20">
+                    class="absolute top-3 right-3 w-max rounded-lg transition-all hover:bg-green-800 hover:bg-opacity-20">
                     <button class="w-max rounded-lg p-1" id="close-btn">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"

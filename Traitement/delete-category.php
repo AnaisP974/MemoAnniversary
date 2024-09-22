@@ -16,6 +16,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' & !empty($_POST['catID'])) {
     if(!$delete) {
         $_SESSION['err'] = "Category not found and not deleted.";
     }
-    header('Location: /profile?pg=p_category-new');
+    header('Location: /profile?pg=new_category');
     exit();
 }
